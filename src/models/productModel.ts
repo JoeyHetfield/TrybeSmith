@@ -5,7 +5,7 @@ import { Product } from '../interfaces';
 async function createProduct(product: Product): Promise<Product> {
   const { name, amount } = product;
 
-  const query = 'INSERT INTO products (name, amount) VALUES (?, ?)';
+  const query = 'INSERT INTO Trybesmith.products (name, amount) VALUES (?, ?)';
   const values = [name, amount];
 
   const [result] = await connection.execute<ResultSetHeader>(query, values);
