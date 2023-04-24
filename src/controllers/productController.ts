@@ -8,6 +8,12 @@ async function createProduct(req: Request, res: Response) {
   res.status(status).json(data);
 }
 
+async function listAllProducts(req: Request, res: Response) {
+  const { status, data } = await productService.listAllProducts();
+  res.status(status).json(data);
+}
+
 export default {
   createProduct,
+  listAllProducts,
 };
