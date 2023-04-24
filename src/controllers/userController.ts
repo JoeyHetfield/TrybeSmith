@@ -4,8 +4,8 @@ import userService from '../services/userService';
 
 async function createUser(req: Request, res: Response) {
   const user = req.body as User;
-  const { status, data } = await userService.createUser(user);
-  res.status(status).json(data);
+  const createdUser = await userService.createUser(user);
+  res.status(201).json({ token: createdUser });
 }
 
 export default {
